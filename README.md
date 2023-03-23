@@ -87,4 +87,16 @@ Once complete, to remove the cluster and maxscale containers:
 
 ```
 docker-compose down -v
+
+
+
+
+
+
+
+
+
+
+
+
 ```
