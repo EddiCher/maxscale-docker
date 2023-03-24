@@ -25,6 +25,7 @@ Installation Docker Compose:
 sudo apt install docker-compose.
 
 Install client access to MariaDB sudo apt install MariaDB-client. then clone maxscale-docker repository from zohan GitHub. git clone https://github.com/Zohan/maxscale-docker.git use the correct directory to run the docker-compose up  "maxscale-docker/maxscale" docker-compose up -d check all servers states then use the command. root@Maxscale:/home/eddie/maxscale/maxscale-docker/maxscale# docker-compose up -d
+
 	Image
 <img width="426" alt="Screenshot 2023-03-20 231129" src="https://user-images.githubusercontent.com/103545139/227627296-49dbf112-5a32-4076-bbb2-738cac21d98f.png">
 
