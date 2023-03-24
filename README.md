@@ -26,60 +26,65 @@ sudo apt install docker-compose.
 
 Install client access to MariaDB sudo apt install MariaDB-client. then clone maxscale-docker repository from zohan GitHub. git clone https://github.com/Zohan/maxscale-docker.git use the correct directory to run the docker-compose up  "maxscale-docker/maxscale" docker-compose up -d check all servers states then use the command. root@Maxscale:/home/eddie/maxscale/maxscale-docker/maxscale# docker-compose up -d
 
-	Image
-<img width="426" alt="Screenshot 2023-03-20 231129" src="https://user-images.githubusercontent.com/103545139/227627296-49dbf112-5a32-4076-bbb2-738cac21d98f.png">
+Image
+
+<img width="426" alt="Screenshot 2023-03-20 231129" src="https://user-images.githubusercontent.com/103545139/227631854-2f5a4d76-91fc-4664-9638-1feba830a535.png">
+
 
 
 	
 once it's set up use the command to comform the status of the server root@Maxscale:/home/eddie/maxscale/maxscale-docker/maxscale# docker ps -a
 
-	Image
-	<img width="919" alt="Screenshot 2023-03-24 124546" src="https://user-images.githubusercontent.com/103545139/227627345-3f2355e9-b77a-46ab-8da5-c835dfca6312.png">
+Image
+<img width="919" alt="Screenshot 2023-03-24 124546" src="https://user-images.githubusercontent.com/103545139/227631962-6c345fe1-2ee3-4d1a-8074-9449470009e0.png">
+	
 
 
 The following command tests the servers are running and connecting to ports. root@Maxscale:/home/eddie/maxscale/maxscale-docker/maxscale# docker-compose exec maxscale maxctrl list servers
 
-	Image
-	<img width="587" alt="Screenshot 2023-03-24 125201" src="https://user-images.githubusercontent.com/103545139/227627372-0b3f70a4-6cea-4776-908c-3aaca55d4b5b.png">
+Image
+<img width="587" alt="Screenshot 2023-03-24 125201" src="https://user-images.githubusercontent.com/103545139/227632043-a4960d19-4131-4092-926a-bfda503674ce.png">
+	
 
 
 	
 Use this command if master is down and how to master2 become master1. docker-compose stop master.
 
-	Image
-	<img width="545" alt="Screenshot 2023-03-24 125537" src="https://user-images.githubusercontent.com/103545139/227628160-01be0532-c54b-4a3c-84fc-ba2ce4eb866b.png">
-
+Image
+<img width="545" alt="Screenshot 2023-03-24 125537" src="https://user-images.githubusercontent.com/103545139/227632103-ed6f28e6-a7d4-4932-9918-4a1e1f3efdab.png">
+	
 
 
 	
 This comand is how to down Master and the slave became master : root@Maxscale:/home/eddie/maxscale/maxscale-docker/maxscale# docker-compose stop master2
 
-	Image
-	<img width="949" alt="Screenshot 2023-03-20 221855" src="https://user-images.githubusercontent.com/103545139/227628273-08a65f63-7ce1-4b27-bbfb-827e235afcea.png">
-
+Image
+<img width="949" alt="Screenshot 2023-03-20 221855" src="https://user-images.githubusercontent.com/103545139/227632150-b701a93f-e7d1-4571-a710-b7bd3ca4c768.png">
+	
 
 	
 	
 This command is to create client to access the databases and it's possible to acceses data from mysql console.
 
-	Image
+Image
+<img width="534" alt="Screenshot 2023-03-20 232549" src="https://user-images.githubusercontent.com/103545139/227632232-85c1a01f-1922-479f-91a6-0496d6077b42.png">
 	
-<img width="534" alt="Screenshot 2023-03-20 232549" src="https://user-images.githubusercontent.com/103545139/227628370-bbf74dc4-93e9-4fdc-9b7c-17daf5d5512a.png">
 
 
 	
 This command is to show the databases in our server
 
-	Image<img width="539" alt="Screenshot 2023-03-20 233014" src="https://user-images.githubusercontent.com/103545139/227628497-0e76c741-0c48-4912-bcef-a1898d0ce380.png">
-
+Image
+<img width="539" alt="Screenshot 2023-03-20 233014" src="https://user-images.githubusercontent.com/103545139/227632374-37aee986-349a-402e-bfcc-ec30cd16d731.png">
 	
 
 
 	
 This command is to access both servers from my maxscale server
 
-	Image
-	<img width="539" alt="Screenshot 2023-03-20 233014" src="https://user-images.githubusercontent.com/103545139/227622548-4602760f-67bf-4107-a6bb-4108b1b63aa8.png">
+Image
+<img width="539" alt="Screenshot 2023-03-20 233014" src="https://user-images.githubusercontent.com/103545139/227632438-5def785f-282a-43bf-99c5-fcedc9c5952e.png">
+	
 
 	
 ## Using python to access remotely our maxscale server
