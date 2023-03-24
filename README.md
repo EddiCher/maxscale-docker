@@ -24,38 +24,62 @@ sudo systemctl status docker.
 Installation Docker Compose: 
 sudo apt install docker-compose.
 
-Install client access to MariaDB sudo apt install MariaDB-client. then clone maxscale-docker repository from zohan GitHub. git clone https://github.com/Zohan/maxscale-docker.git use the correct directory to run the docker-compose up  "maxscale-docker/maxscale" docker-compose up -d check all servers states then use the command. root@Maxscale:/home/sarmad/maxscale/maxscale-docker/maxscale# docker-compose up -d
+Install client access to MariaDB sudo apt install MariaDB-client. then clone maxscale-docker repository from zohan GitHub. git clone https://github.com/Zohan/maxscale-docker.git use the correct directory to run the docker-compose up  "maxscale-docker/maxscale" docker-compose up -d check all servers states then use the command. root@Maxscale:/home/eddie/maxscale/maxscale-docker/maxscale# docker-compose up -d
 	Image
-<img width="426" alt="Screenshot 2023-03-20 231129" src="https://user-images.githubusercontent.com/103545139/227316255-b9cd21f3-d8fe-4a25-9a1b-6d1b43078c6a.png">
+<img width="426" alt="Screenshot 2023-03-20 231129" src="https://user-images.githubusercontent.com/103545139/227627296-49dbf112-5a32-4076-bbb2-738cac21d98f.png">
+
 
 	
-once it's set up use the command to comform the status of the server root@Maxscale:/home/sarmad/maxscale/maxscale-docker/maxscale# docker ps -a
+once it's set up use the command to comform the status of the server root@Maxscale:/home/eddie/maxscale/maxscale-docker/maxscale# docker ps -a
 
 	Image
-	
-The following command tests the servers are running and connecting to ports. root@Maxscale:/home/sarmad/maxscale/maxscale-docker/maxscale# docker-compose exec maxscale maxctrl list servers
+	<img width="919" alt="Screenshot 2023-03-24 124546" src="https://user-images.githubusercontent.com/103545139/227627345-3f2355e9-b77a-46ab-8da5-c835dfca6312.png">
+
+
+The following command tests the servers are running and connecting to ports. root@Maxscale:/home/eddie/maxscale/maxscale-docker/maxscale# docker-compose exec maxscale maxctrl list servers
 
 	Image
+	<img width="587" alt="Screenshot 2023-03-24 125201" src="https://user-images.githubusercontent.com/103545139/227627372-0b3f70a4-6cea-4776-908c-3aaca55d4b5b.png">
+
+
 	
 Use this command if master is down and how to master2 become master1. docker-compose stop master.
 
 	Image
+	<img width="545" alt="Screenshot 2023-03-24 125537" src="https://user-images.githubusercontent.com/103545139/227628160-01be0532-c54b-4a3c-84fc-ba2ce4eb866b.png">
+
+
+
 	
-This comand is how to down Master2 : root@Maxscale:/home/sarmad/maxscale/maxscale-docker/maxscale# docker-compose stop master2
+This comand is how to down Master and the slave became master : root@Maxscale:/home/eddie/maxscale/maxscale-docker/maxscale# docker-compose stop master2
 
 	Image
+	<img width="949" alt="Screenshot 2023-03-20 221855" src="https://user-images.githubusercontent.com/103545139/227628273-08a65f63-7ce1-4b27-bbfb-827e235afcea.png">
+
+
+	
 	
 This command is to create client to access the databases and it's possible to acceses data from mysql console.
 
 	Image
 	
+<img width="534" alt="Screenshot 2023-03-20 232549" src="https://user-images.githubusercontent.com/103545139/227628370-bbf74dc4-93e9-4fdc-9b7c-17daf5d5512a.png">
+
+
+	
 This command is to show the databases in our server
 
-	Image
+	Image<img width="539" alt="Screenshot 2023-03-20 233014" src="https://user-images.githubusercontent.com/103545139/227628497-0e76c741-0c48-4912-bcef-a1898d0ce380.png">
+
+	
+
+
 	
 This command is to access both servers from my maxscale server
 
 	Image
+	<img width="539" alt="Screenshot 2023-03-20 233014" src="https://user-images.githubusercontent.com/103545139/227622548-4602760f-67bf-4107-a6bb-4108b1b63aa8.png">
+
 	
 ## Using python to access remotely our maxscale server
 
@@ -68,6 +92,8 @@ This command is to access both servers from my maxscale server
 (40843, 'STANDARD', 'HOLMES MILL', 'KY', 'PRIMARY', '36.86', '-83', 'NA-US-KY-HOLMES MILL', 'FALSE', '', '', '') (41425, 'STANDARD', 'EZEL', 'KY', 'PRIMARY', '37.89', '-83.44', 'NA-US-KY-EZEL', 'FALSE', '390', '801', '10204009') (40118, 'STANDARD', 'FAIRDALE', 'KY', 'PRIMARY', '38.11', '-85.75', 'NA-US-KY-FAIRDALE', 'FALSE', '4398', '7635', '122449930') (40020, 'PO BOX', 'FAIRFIELD', 'KY', 'PRIMARY', '37.93', '-85.38', 'NA-US-KY-FAIRFIELD', 'FALSE', '', '', '') (42221, 'PO BOX', 'FAIRVIEW', 'KY', 'PRIMARY', '36.84', '-87.31', 'NA-US-KY-FAIRVIEW', 'FALSE', '', '', '') (41426, 'PO BOX', 'FALCON', 'KY', 'PRIMARY', '37.78', '-83', 'NA-US-KY-FALCON', 'FALSE', '', '', '') (40932, 'PO BOX', 'FALL ROCK', 'KY', 'PRIMARY', '37.22', '-83.78', 'NA-US-KY-FALL ROCK', 'FALSE', '', '', '') (40119, 'STANDARD', 'FALLS OF ROUGH', 'KY', 'PRIMARY', '37.6', '-86.55', 'NA-US-KY-FALLS OF ROUGH', 'FALSE', '760', '1468', '20771670') (42039, 'STANDARD', 'FANCY FARM', 'KY', 'PRIMARY', '36.75', '-88.79', 'NA-US-KY-FANCY FARM', 'FALSE', '696', '1317', '20643485') (40319, 'PO BOX', 'FARMERS', 'KY', 'PRIMARY', '38.14', '-83.54', 'NA-US-KY-FARMERS', 'FALSE', '', '', '')
 
 	Image python
+	
+
 	
 ## The first 10 rows of zipcodes_two are:
 
