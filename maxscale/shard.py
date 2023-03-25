@@ -1,3 +1,4 @@
+# this my python code.
 import pymysql
 db = pymysql.connect(host="10.0.0.237", port=4000, user="maxuser", passwd="maxpwd")
 cursor = db.cursor()
